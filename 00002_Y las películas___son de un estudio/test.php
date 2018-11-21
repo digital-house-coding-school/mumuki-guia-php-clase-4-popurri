@@ -25,6 +25,18 @@ public function testUp(): void {
   $this->assertTrue(!is_null($bp->unsigned), "¿Modificaste el blueprint mediante el método unsignedInteger?");
   
   $this->assertTrue(is_string($bp->unsigned) && $bp->unsigned == "studio_id", "El método unsignedInteger debería recibir el string 'studio_id'");
+  
+  $this->assertTrue(!is_null($bp->foreign), "¿Modificaste el blueprint mediante el método foreign?");
+  
+  $this->assertTrue(is_string($bp->foreign) && $bp->foreign == "studio_id", "El método foreign debería recibir el string 'studio_id'");
+  
+  $this->assertTrue(!is_null($bp->references), "¿Llamaste a references luego de foreign?");
+  
+  $this->assertTrue(is_string($bp->references) && $bp->references == "id", "El método references debería recibir el string 'id'");
+  
+  $this->assertTrue(!is_null($bp->on), "¿Llamaste a on luego de references?");
+  
+  $this->assertTrue(is_string($bp->on) && $bp->on == "studios", "El método on debería recibir el string 'studios'");
 }
 
 public function testDown(): void {
