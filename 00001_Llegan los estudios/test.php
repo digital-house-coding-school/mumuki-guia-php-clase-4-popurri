@@ -13,8 +13,8 @@ public function testUp(): void {
   
   $reflection = new ReflectionFunction(Schema::$funcUp);
   $arguments  = $reflection->getParameters();
-  
-  $this->assertTrue(count($arguments) == 1, "La función anónima debe recibir un parámetro");
+  var_dump($arguments);exit;
+  $this->assertTrue(count($arguments) == 2, "La función anónima debe recibir un parámetro");
 }
 
 public function testDown(): void {
