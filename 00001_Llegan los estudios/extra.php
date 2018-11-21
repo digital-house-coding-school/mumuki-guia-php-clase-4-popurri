@@ -9,7 +9,7 @@ class Blueprint {
   public $timestamps = false;
   
   public function increments($col) {
-    $this->incrementes = $col;
+    $this->increments = $col;
   }
   
   public function string($col) {
