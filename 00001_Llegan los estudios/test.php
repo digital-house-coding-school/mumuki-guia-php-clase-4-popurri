@@ -17,6 +17,13 @@ public function testUp(): void {
   $this->assertTrue(count($arguments) == 1, "La función anónima debe recibir un parámetro");
   
   $this->assertTrue($arguments[0]->getType() && $arguments[0]->getType()->getName() == "Blueprint", "La función anónima debe recibir un parámetro de tipo Blueprint");
+  
+  $bp = new BluePrint();
+  Schema::$funcUp($bp);
+  
+  $this->assertTrue(!is_null($bp->increments), "Modificaste el blueprint mediante el método increments?");
+  
+  $this->assertTrue($bp->increments == "id", "Modificaste el blueprint mediante el método increments?");
 }
 
 public function testDown(): void {
