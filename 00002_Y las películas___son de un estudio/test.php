@@ -1,6 +1,6 @@
 public function testUp(): void {
   $mig = new AddStudioToMovies();
-  
+
   $mig->up();
   
   $this->assertTrue(isset(Schema::$tableAlter), "¿Llamaste al método Schema::table dentro de la función up?");
@@ -49,5 +49,5 @@ public function testDown(): void {
   
   $this->assertTrue(!is_null($bp->dropForeign), "¿Modificaste el blueprint mediante el método dropForeign?");
   
-  $this->assertTrue(is_string($bp->dropForeign) && $bp->dropForeign == "id", "El método dropForeign debería recibir el string 'movies_studio_id_foreign'");
+  $this->assertTrue(is_string($bp->dropForeign) && $bp->dropForeign == "movies_studio_id_foreign", "El método dropForeign debería recibir el string 'movies_studio_id_foreign'");
 }
