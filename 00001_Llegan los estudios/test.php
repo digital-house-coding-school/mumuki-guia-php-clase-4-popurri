@@ -25,6 +25,12 @@ public function testUp(): void {
   $this->assertTrue(!is_null($bp->increments), "¿Modificaste el blueprint mediante el método increments?");
   
   $this->assertTrue(is_string($bp->increments) && $bp->increments == "id", "El método increments debería recibir el string 'id'");
+  
+  $this->assertTrue($bp->timestamps, "¿Llamaste al método timestamps del blueprint?");
+  
+  $this->assertTrue(count($bp->string) == 1, "Deberías llamar al método string del blueprint 1 (y solo 1) vez");
+  
+  $this->assertTrue(is_string($bp->string[0]) && $bp->string[0] == "name", "El método string debería recibir el string 'name'");
 }
 
 public function testDown(): void {
