@@ -7,7 +7,7 @@ public function testUp(): void {
   
   $this->assertTrue(is_string(Schema::$tableUp), "El método up debería recibir un string como primer parámetro");
   
-  $this->assertTrue(Schema::$tableUp === "studio", "La tabla a crear en el método up debería llamarse 'studio'. Sin embargo, se recibió '" . Schema::$tableUp . "'");
+  $this->assertTrue(Schema::$tableUp === "studios", "La tabla a crear en el método up debería llamarse 'studios'. Sin embargo, se recibió '" . Schema::$tableUp . "'");
   
   $this->assertTrue(Schema::$funcUp instanceof Closure, "El segundo parámetro recibido por Schema::create debe ser una función anónima");
   
@@ -42,5 +42,5 @@ public function testDown(): void {
   
   $this->assertTrue(is_string(Schema::$tableDown), "El método down debería recibir un string");
   
-  $this->assertTrue(Schema::$tableDown === "studio", "La tabla a eliminar en el método down debería llamarse 'studio'. Sin embargo, se recibió '" . Schema::$tableDown . "'");
+  $this->assertTrue(Schema::$tableDown === "studios", "La tabla a eliminar en el método down debería llamarse 'studios'. Sin embargo, se recibió '" . Schema::$tableDown . "'");
 }
