@@ -21,6 +21,10 @@ public function testUp(): void {
   $bp = new BluePrint();
   $func = Schema::$funcAlter;
   $func($bp);
+  
+  $this->assertTrue(!is_null($bp->unsigned), "¿Modificaste el blueprint mediante el método unsignedInteger?");
+  
+  $this->assertTrue(is_string($bp->unsigned) && $bp->unsigned == "studio_id", "El método unsignedInteger debería recibir el string 'studio_id'");
 }
 
 public function testDown(): void {
