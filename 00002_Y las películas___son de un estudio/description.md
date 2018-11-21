@@ -14,4 +14,4 @@ $table->foreign('FK')->references('PK')->on('TABLA');
 
 > donde FK debe indicar el nombre de la clave foránea (studio_id), PK el nombre de la clave primaria en la tabla a relacionar (id) y TABLA el nombre de la tabla a relacionar (studio)
 
-> **C.** La función `down` debería eliminar la clave foránea y su columna. Laravel resuelve esto mediante un solo método de la clase `Blueprint` (es decir, la variable `$table`) llamado `dropForeign`. Este método recibe un string con la convención TABLA_COLUMNA_foreign. En este caso se debería enviar **movies_studio_id_foreign**
+> **C.** La función `down` debería eliminar la clave foránea y su columna. Laravel resuelve esto mediante un solo método de la clase `Blueprint` (es decir, la variable `$table`) llamado `dropForeign`. Este método recibe un string con la convención TABLA_COLUMNA_foreign. En este caso se debería enviar ****

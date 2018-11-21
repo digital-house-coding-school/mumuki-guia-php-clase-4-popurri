@@ -46,4 +46,8 @@ public function testDown(): void {
   $bp = new BluePrint();
   $func = Schema::$funcAlter;
   $func($bp);
+  
+  $this->assertTrue(!is_null($bp->dropForeign), "¿Modificaste el blueprint mediante el método dropForeign?");
+  
+  $this->assertTrue(is_string($bp->dropForeign) && $bp->dropForeign == "id", "El método dropForeign debería recibir el string 'movies_studio_id_foreign'");
 }
