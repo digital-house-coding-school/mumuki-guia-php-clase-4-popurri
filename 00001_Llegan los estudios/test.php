@@ -22,9 +22,9 @@ public function testUp(): void {
   $func = Schema::$funcUp;
   $func($bp);
   
-  $this->assertTrue(!is_null($bp->increments), "Modificaste el blueprint mediante el método increments?");
+  $this->assertTrue(!is_null($bp->increments), "¿Modificaste el blueprint mediante el método increments?");
   
-  $this->assertTrue($bp->increments == "id", "Modificaste el blueprint mediante el método increments?");
+  $this->assertTrue(is_string($bp->increments) && $bp->increments == "id", "El método increments debería recibir el string 'id'");
 }
 
 public function testDown(): void {
