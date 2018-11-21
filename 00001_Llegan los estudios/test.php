@@ -21,6 +21,7 @@ public function testUp(): void {
   $bp = new BluePrint();
   $func = Schema::$funcUp;
   $func($bp);
+  var_dump($bp);exit;
   
   $this->assertTrue(!is_null($bp->increments), "¿Modificaste el blueprint mediante el método increments?");
   
