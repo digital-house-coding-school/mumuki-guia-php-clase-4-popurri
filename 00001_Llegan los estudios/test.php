@@ -5,7 +5,7 @@ public function testUp(): void {
   
   $this->assertTrue(isset(Schema::$tableUp), "¿Llamaste al método Schema::create dentro de la función up?");
   
-  $this->assertTrue(is_string(Schema::$tableUp), "El método up debería recibir un string como primer parámetro");
+  $this->assertTrue(is_string(Schema::$tableUp), "El método Schema::create debería recibir un string como primer parámetro");
   
   $this->assertTrue(Schema::$tableUp === "studios", "La tabla a crear en el método up debería llamarse 'studios'. Sin embargo, se recibió '" . Schema::$tableUp . "'");
   
