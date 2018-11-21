@@ -1,3 +1,7 @@
+function view() {
+
+}
+
 class Controller {
 
 }
