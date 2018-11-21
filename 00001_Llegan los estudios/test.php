@@ -1,5 +1,13 @@
 public function testUp(): void {
-  $this->assertTrue(true);
+  $mig = new CreateStudioTable();
+  
+  $mig->up();
+  
+  $this->assertTrue(isset(Schema::$tableUp), "¿Llamaste al método Schema::create dentro de la función up?");
+  
+  $this->assertTrue(is_string(Schema::$tableUp), "El método up debería recibir un string como primer parámetro");
+  
+  $this->assertTrue(Schema::$tableUp === "studio", "La tabla a crear en el método up debería llamarse 'studio'. Sin embargo, se recibió '" . Schema::$tableUp . "'");
 }
 
 public function testDown(): void {
