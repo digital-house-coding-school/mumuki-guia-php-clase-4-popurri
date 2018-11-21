@@ -13,8 +13,10 @@ public function testUp(): void {
   
   $reflection = new ReflectionFunction(Schema::$funcUp);
   $arguments  = $reflection->getParameters();
-  var_dump($arguments[0]->getType()->getName());exit;
-  $this->assertTrue(count($arguments) == 2, "La función anónima debe recibir un parámetro");
+
+  $this->assertTrue(count($arguments) == 1, "La función anónima debe recibir un parámetro");
+  
+  $this->assertTrue($arguments[0]->getType() && $arguments[0]->getType()->getName() == "Blueprint", "La función anónima debe recibir un parámetro de tipo Blueprint");
 }
 
 public function testDown(): void {
