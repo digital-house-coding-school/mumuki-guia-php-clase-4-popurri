@@ -8,6 +8,13 @@ public function testUp(): void {
   $this->assertTrue(is_string(Schema::$tableUp), "El método up debería recibir un string como primer parámetro");
   
   $this->assertTrue(Schema::$tableUp === "studio", "La tabla a crear en el método up debería llamarse 'studio'. Sin embargo, se recibió '" . Schema::$tableUp . "'");
+  
+  $this->assertTrue(Schema::$funcUp instanceof Closure, "El segundo parámetro recibido por Schema::create debe ser una función anónima");
+  
+  $reflection = new ReflectionFunction(Schema::$funcUp);
+  $arguments  = $reflection->getParameters();
+  
+  $this->assertTrue(count($arguments) == 1, "La función anónima debe recibir un parámetro");
 }
 
 public function testDown(): void {
