@@ -1,8 +1,8 @@
-public function testCurl(): void {
+ public function testCurl(): void {
     $controller = new PaisesController();
-    $controller->listar();
+    $controller->listado();
 
-    $this->assertTrue(Curl::$to === "https://restcountries.eu/rest/v2/all", "Você utilizou Curl::to? e colocou a URL correta?");
+    $this->assertTrue(Curl::$to === "https://restcountries.eu/rest/v2/all", "¿Llamaste a Curl::to? ¿Le asignaste la URL correcta?");
     
-    $this->assertTrue(Curl::$get, "Chamou o método get?");
+    $this->assertTrue(Curl::$get, "¿Llamaste luego del método to al método get?");
   }
